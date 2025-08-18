@@ -1,18 +1,20 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class UIScene : UIBase
+namespace SongLib
 {
-
-    public override void Show()
+    public class UIScene : UIBase
     {
-        base.Show();
-        
-        foreach (Transform child in transform)
+        public override void Init()
         {
-            child.transform.DOKill();
-            child.transform.localScale = Vector3.one * 0.9f;
-            child.transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
-        } 
+            base.Init();
+
+            foreach (Transform child in transform)
+            {
+                child.transform.DOKill();
+                child.transform.localScale = Vector3.one * 0.9f;
+                child.transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
+            }
+        }
     }
 }

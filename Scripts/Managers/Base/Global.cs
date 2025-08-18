@@ -14,10 +14,10 @@ namespace SongLib
         public static IPoolManager Pool { get; private set; }
         public static IUIManager UI { get; private set; }
         public static IObjectManager Object { get; private set; }
-        public static IDebugManager Debug { get; private set; }
+        public static ITimeManager Time { get; private set; }
         #endregion
 
-
+        #region << ========== SETUP ========== >>
         public static bool IsInitialized => BaseGameManager.Instance.IsInitialized;
 
         public static List<IBaseManager> Managers;
@@ -26,7 +26,8 @@ namespace SongLib
         {
             Managers = managers;
         }
-
+        #endregion
+        
         #region << ========== INIT MANAGERS ========== >>
         public static void Init(IEventManager eventManager) => Event = eventManager;
         public static void Init(IPopupManager popupManager) => Popup = popupManager;
@@ -35,7 +36,7 @@ namespace SongLib
         public static void Init(IPoolManager poolManager) => Pool = poolManager;
         public static void Init(IUIManager uiManager) => UI = uiManager;
         public static void Init(IObjectManager objectManager) => Object = objectManager;
-        public static void Init(IDebugManager debugManager) => Debug = debugManager;
+        public static void Init(ITimeManager timeManager) => Time = timeManager;
         #endregion
     }
 }

@@ -4,20 +4,9 @@ using System.Collections;
 
 namespace SongLib
 {
-    public abstract class BaseSceneManager<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class BaseSceneManager<T> : SingletonWithScene<T> where T : MonoBehaviour
     {
         public bool IsInitialized { get; private set; } = false;
-        
-        public static T Instance { get; private set; }
-        protected virtual void Awake()
-        {
-            if (Instance)
-            {
-                DestroyImmediate(gameObject);
-                return;
-            }
-            Instance = this as T;
-        }
         
         protected virtual void Start()
         {
@@ -39,7 +28,7 @@ namespace SongLib
 
         private void Initialize()
         {
-            DebugHelper.Log(DebugType.Init, $"🔵 - [ {typeof(T).Name} ] Initialize Completed!");
+            DebugHelper.Log(EDebugType.Init, $"🔵 - [ {typeof(T).Name} ] Initialize Completed!");
             IsInitialized = true;
             Init();
         }

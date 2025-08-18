@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class UIElement<T> : UIBase where T : UIBase
+namespace SongLib
 {
-    private T _parent;
-    public void Setup(T parent)
+    public abstract class UIElement<T> : UIBase where T : UIBase
     {
-        _parent = parent;
+        private T _parent;
+        public void Setup(T parent)
+        {
+            _parent = parent;
+        }
     }
 }
