@@ -19,7 +19,7 @@ namespace SongLib
             Global.Init(this);
             _popupSystem = new PopupSystem(transform);
             
-            DebugHelper.Log(DebugType.Init, $"🟢 - [ PopupManager ] Initialize Completed!");
+            DebugHelper.Log(EDebugType.Init, $"🟢 - [ PopupManager ] Initialize Completed!");
             IsInitialized = true;
         }
 
@@ -38,7 +38,7 @@ namespace SongLib
         }
 
         /// <summary>안드로이드키 업데이트</summary>
-        public bool OnUpdateAndroidKey(AndroidKeyStateType keyState)
+        public bool OnUpdateAndroidKey(EAndroidKeyStateType keyState)
         {
             return _popupSystem.OnUpdateAndroidKey(keyState);
         }

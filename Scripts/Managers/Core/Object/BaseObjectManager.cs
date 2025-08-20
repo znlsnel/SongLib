@@ -15,7 +15,7 @@ namespace SongLib
             
             SceneManager.sceneUnloaded += OnSceneUnloaded;
             
-            DebugHelper.Log(DebugType.Init, $"🟢 - [ ObjectManager ] Initialize Completed!");
+            DebugHelper.Log(EDebugType.Init, $"🟢 - [ ObjectManager ] Initialize Completed!");
             IsInitialized = true;
         }
 
@@ -85,7 +85,7 @@ namespace SongLib
                 return null;
             }
 
-            obj.AttachParentObject(parentTran);
+            obj.transform.AttachParentObject(parentTran);
 
             return obj;
         }
@@ -110,7 +110,7 @@ namespace SongLib
             // UnuseResource에 포함되어 있다면 중복 호출이므로 return
             if (Global.UtilPool.IsContainUnuseResource(go))
             {
-                DebugHelper.LogWarning(DebugType.System, "[ObjectManager] DestroyObject - Already Contain UnuseResource");
+                DebugHelper.LogWarning(EDebugType.System, "[ObjectManager] DestroyObject - Already Contain UnuseResource");
                 return;
             }
 

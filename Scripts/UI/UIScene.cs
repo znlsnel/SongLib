@@ -1,20 +1,31 @@
-using DG.Tweening;
 using UnityEngine;
 
 namespace SongLib
 {
-    public class UIScene : UIBase
+    public abstract class UIScene: UIPanel
     {
+        [SerializeField] private UIContainer _uiContainer;
+
         public override void Init()
         {
             base.Init();
-
-            foreach (Transform child in transform)
+            
+            if (_uiContainer == null)
             {
-                child.transform.DOKill();
-                child.transform.localScale = Vector3.one * 0.9f;
-                child.transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
+                InitChildUIBase();
+            }
+            else
+            {
+                _uiContainer.Init();
             }
         }
+
+        public override void Refresh()
+        {
+            base.Refresh();
+        }
+
+        protected abstract override void OnInit();
+        protected abstract override void OnRefresh();
     }
 }

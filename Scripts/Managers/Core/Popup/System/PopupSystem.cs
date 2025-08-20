@@ -40,7 +40,7 @@ namespace SongLib
         }
 
         /// <summary>안드로이드키 업데이트</summary>
-        public bool OnUpdateAndroidKey(AndroidKeyStateType _keyState)
+        public bool OnUpdateAndroidKey(EAndroidKeyStateType _keyState)
         {
             if (!(_topOpenPopup != null))
                 return false;
@@ -297,7 +297,7 @@ namespace SongLib
                 }
             }
             
-            DebugHelper.Log(DebugType.UI, $"PopupUD = {popupID}, prevPopupID = {prevUIPopup?.GetPopupID()}");
+            DebugHelper.Log(EDebugType.UI, $"PopupUD = {popupID}, prevPopupID = {prevUIPopup?.GetPopupID()}");
             if (prevUIPopup != null)
             {
                 uiPopup.PrevPopupID = prevUIPopup.GetPopupID();

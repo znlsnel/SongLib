@@ -12,5 +12,6 @@ namespace SongLib
     public enum EGlobalType
     {
         TransitionDim,
+        Localize,
     }
 }

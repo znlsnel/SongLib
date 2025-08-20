@@ -74,7 +74,7 @@ namespace SongLib
                 return uiDic[index];
             }
 
-            DebugHelper.LogError(DebugType.UI, $"[ UIManager ] GetUI - Not Found UI : {index}");
+            DebugHelper.LogError(EDebugType.UI, $"[ UIManager ] GetUI - Not Found UI : {index}");
             return null;
         }
         
@@ -88,7 +88,7 @@ namespace SongLib
                 }
             }
 
-            DebugHelper.LogError(DebugType.UI, $"[ UIManager ] GetUI - Not Found UI with Tag: {tagName}");
+            DebugHelper.LogError(EDebugType.UI, $"[ UIManager ] GetUI - Not Found UI with Tag: {tagName}");
             return null;
         }
         
@@ -120,7 +120,7 @@ namespace SongLib
                 }
             }
 
-            DebugHelper.LogError(DebugType.UI, $"[ UIManager ] GetUIIndex<{typeof(T).Name}> - Not Found");
+            DebugHelper.LogError(EDebugType.UI, $"[ UIManager ] GetUIIndex<{typeof(T).Name}> - Not Found");
             return -1;
         }
 
