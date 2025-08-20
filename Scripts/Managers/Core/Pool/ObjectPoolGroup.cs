@@ -6,7 +6,7 @@ public class ObjectPoolGroup : BasePoolGroup
 {
     protected override BasePool CreateResourcePool(string resourceName)
     {
-        GameObject prefab = Global.Resource.GetPrefab(resourceName);
+        GameObject prefab = Global.UtilResource.GetPrefab(resourceName);
         if (prefab == null)
         {
             return null;

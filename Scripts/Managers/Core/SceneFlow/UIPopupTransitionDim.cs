@@ -12,7 +12,7 @@ namespace SongLib
         
         private Coroutine _transitionCoroutine;
 
-        public override int GetPopupID() => (int)GlobalType.TransitionDim;
+        public override int GetPopupID() => (int)EGlobalType.TransitionDim;
 
         protected override void OnInitPopup() { }
         protected override void OnRefresh() { }
@@ -90,5 +90,6 @@ namespace SongLib
             _dimImg.color = color;
             onComplete?.Invoke();
         }
+
     }
 }

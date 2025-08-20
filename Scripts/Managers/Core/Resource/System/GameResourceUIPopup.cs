@@ -32,7 +32,7 @@ namespace SongLib
                     {
                         GameObject gameObject2;
                         popupObjects.TryGetValue(component.GetPopupID(), out gameObject2);
-                        DebugHelper.LogWarning(DebugType.UI, $"UI Resource Same Key Already Exist : {gameObject1.name} ({component.GetPopupID()} - {gameObject2.name})");
+                        DebugHelper.LogWarning(EDebugType.UI, $"UI Resource Same Key Already Exist : {gameObject1.name} ({component.GetPopupID()} - {gameObject2.name})");
                         Debug.LogError(ex);
                     }
                 }
@@ -46,7 +46,7 @@ namespace SongLib
                 return popupObjects[id];
             }
 
-            DebugHelper.LogWarning(DebugType.UI, $"[ GameResourceUIPopup ] GetPopUpUI Fail : {id}");
+            DebugHelper.LogWarning(EDebugType.UI, $"[ GameResourceUIPopup ] GetPopUpUI Fail : {id}");
             return null;
         }
         

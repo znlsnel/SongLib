@@ -126,7 +126,7 @@ namespace SongLib
 
         public void Localize()
         {
-            Global.UtilEvent.Trigger((int)GlobalType.Localize);
+            Global.UtilEvent.Trigger((int)EGlobalType.Localize);
         }
         
         #endregion

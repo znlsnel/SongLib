@@ -1,18 +1,9 @@
 using UnityEngine;
 
 
-public static class GameObjectExtensions
+public static class UtilGameObject
 {
 
-
-    public static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component
-    {
-        if (gameObject.TryGetComponent(out T component))
-        {
-            return component;
-        }
-        return gameObject.AddComponent<T>();
-    }
 
     public static GameObject FindChild(this GameObject go, string name = null, bool recursive = false)
     {

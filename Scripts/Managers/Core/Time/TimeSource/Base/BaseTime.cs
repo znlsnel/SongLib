@@ -9,7 +9,7 @@ namespace SongLib
         {
             get
             {
-                cached ??= Global.Time.Get(timeLayer);
+                cached ??= Global.UtilTime.Get(timeLayer);
                 return cached.BaseDeltaTime;
             }
         }

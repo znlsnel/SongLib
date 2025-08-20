@@ -17,7 +17,7 @@ namespace SongLib
 
         public virtual void Init()
         {
-            DebugHelper.Log(DebugType.Init, $"[ SceneFlowManager ] Initialize Completed!");
+            DebugHelper.Log(EDebugType.Init, $"[ SceneFlowManager ] Initialize Completed!");
             IsInitialized = true;
         }
         
@@ -25,18 +25,18 @@ namespace SongLib
         {
             ClearTransitionCoroutine();
 
-            Global.Popup?.ForceCloseAllOpenPopup();
+            Global.UtilPopup?.ForceCloseAllOpenPopup();
 
             if (transitionType == -1)
             {
-                DebugHelper.Log(DebugType.System, "[ SceneFlowManager ] Using default transition.");
+                DebugHelper.Log(EDebugType.System, "[ SceneFlowManager ] Using default transition.");
                 _currentSceneTransition = null;
             }
             else
             {
                 if (sceneTransitionDict.TryGetValue(transitionType, out _currentSceneTransition))
                 {
-                    DebugHelper.Log(DebugType.System, $"[ SceneFlowManager ] Using transition type: {transitionType}");
+                    DebugHelper.Log(EDebugType.System, $"[ SceneFlowManager ] Using transition type: {transitionType}");
                 }
                 else
                 {
@@ -68,7 +68,7 @@ namespace SongLib
             
             while (asyncLoad.progress < 0.9f)
             {
-                DebugHelper.Log(DebugType.Info, $"Loading progress: {asyncLoad.progress}");
+                DebugHelper.Log(EDebugType.Info, $"Loading progress: {asyncLoad.progress}");
                 yield return null;
             }
             

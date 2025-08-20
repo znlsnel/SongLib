@@ -105,7 +105,7 @@ namespace SongLib
         
         protected virtual AudioClip GetAudioClip(string soundName)
         {
-            return Global.Resource.GetAudioClip(soundName);
+            return Global.UtilResource.GetAudioClip(soundName);
         }
         
         #endregion

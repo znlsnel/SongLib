@@ -39,7 +39,7 @@ namespace SongLib
 
             string result = string.Join(",", folders);
             File.WriteAllText("Assets/Resources/audio_folders.txt", result);
-            DebugHelper.Log(DebugType.System, "Audio folders exported with .ogg, .wav, .mp3");
+            DebugHelper.Log(EDebugType.System, "Audio folders exported with .ogg, .wav, .mp3");
         }
         
         public void ExportAllPrefabPaths()
@@ -66,7 +66,7 @@ namespace SongLib
 
             string result = string.Join(",", folders);
             File.WriteAllText("Assets/Resources/prefab_folders.txt", result);
-            DebugHelper.Log(DebugType.System, "Prefab folders exported.");
+            DebugHelper.Log(EDebugType.System, "Prefab folders exported.");
         }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public static class TransformExtensions
+public static class UtilTransform
 {
     public static void AttachParentObject(this Transform child, Transform parent, bool isInit = true)
     {

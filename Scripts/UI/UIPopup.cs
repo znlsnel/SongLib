@@ -6,25 +6,25 @@ using UnityEngine.UI;
 
 namespace SongLib
 {
-    public class UIPopup : UIBase
+    public abstract class UIPopup : UIBase
     {
-        [Header("PopupUI Settings")]
-        [SerializeField] private Transform _panel;
-        [SerializeField] private List<Button> _closeButtons = new List<Button>();
 
-        public override void Init()
+        public abstract int GetPopupID();
+
+        protected abstract void OnInitPopup();
+        protected abstract void OnRefresh();
+
+        public void Open()
         {
-            base.Init();
-
-            foreach (var button in _closeButtons)
-                button.onClick.AddListener(Hide);
 
         }
 
-        public void Hide()
+        public void Close()
         {
             
         }
 
     }
+
+
 }

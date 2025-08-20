@@ -37,10 +37,10 @@ namespace SongLib
         {
             if (pooling)
             {
-                return Global.Pool.Pop(key, subName).GetGameObject();
+                return Global.UtilPool.Pop(key, subName).GetGameObject();
             }
 
-            GameObject prefab = Global.Resource.GetPrefab($"{key}");
+            GameObject prefab = Global.UtilResource.GetPrefab($"{key}");
             if (prefab == null)
             {
                 Debug.LogError($"Failed to load prefab : {key}");
@@ -54,7 +54,7 @@ namespace SongLib
 
         protected BasePool AddBasePool(string key)
         {
-            return Global.Pool.Pop(key);
+            return Global.UtilPool.Pop(key);
         }
 
         protected GameObject AddObject(string key, Vector3 pos, Vector3 dir, string subName = "", bool pooling = false)
@@ -102,13 +102,13 @@ namespace SongLib
             }
 
             // Pool에 넣을 수 있다면 Pool에 넣고 return
-            if (Global.Pool.Push(go))
+            if (Global.UtilPool.Push(go))
             {
                 return;
             }
 
             // UnuseResource에 포함되어 있다면 중복 호출이므로 return
-            if (Global.Pool.IsContainUnuseResource(go))
+            if (Global.UtilPool.IsContainUnuseResource(go))
             {
                 DebugHelper.LogWarning(DebugType.System, "[ObjectManager] DestroyObject - Already Contain UnuseResource");
                 return;

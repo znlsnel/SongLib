@@ -36,7 +36,7 @@ namespace SongLib
             if (_spriteResources.TryGetValue(fileName, out var sprite))
                 return sprite;
 
-            DebugHelper.LogWarning(DebugType.Info, $"[SpriteResource] Sprite not found for key: {fileName}");
+            DebugHelper.LogWarning(EDebugType.Info, $"[SpriteResource] Sprite not found for key: {fileName}");
             return null;
         }
     }

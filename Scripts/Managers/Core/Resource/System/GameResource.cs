@@ -35,7 +35,7 @@ namespace SongLib
 
         public void DelResource(string fileName)
         {
-            DebugHelper.Log(DebugType.Info, fileName);
+            DebugHelper.Log(EDebugType.Info, fileName);
             if (fileName.IsNullOrEmpty()) return;
             
             Destroy(fileName);
@@ -81,7 +81,7 @@ namespace SongLib
                 }
             }
 
-            DebugHelper.LogWarning(DebugType.Info, $"[Resource - {typeof(T)}] LoadResource Fail : {fileName}");
+            DebugHelper.LogWarning(EDebugType.Info, $"[Resource - {typeof(T)}] LoadResource Fail : {fileName}");
             
             return default;
         }
@@ -116,7 +116,7 @@ namespace SongLib
             if (resource == null)
                 return;
             Object.DestroyImmediate(resource);
-            DebugHelper.Log(DebugType.System, ("Destroy " + _strName));
+            DebugHelper.Log(EDebugType.System, ("Destroy " + _strName));
             resources.Remove(_strName);
         }
 

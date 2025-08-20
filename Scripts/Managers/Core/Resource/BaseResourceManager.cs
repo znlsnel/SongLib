@@ -40,7 +40,7 @@ namespace SongLib
             InitGameResource();
             Global.Init(this);
             
-            DebugHelper.Log(DebugType.Init, $"🟢 - [ ResourceManager ] Initialize Completed!");
+            DebugHelper.Log(EDebugType.Init, $"🟢 - [ ResourceManager ] Initialize Completed!");
             IsInitialized = true;
         }
 

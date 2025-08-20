@@ -7,7 +7,7 @@ namespace SongLib
             SoundSettingData soundItem = new SoundSettingData();
             soundItem.SoundName = soundName;
             soundItem.MaxOverlapCount = maxOverlapCount;
-            Global.Audio.SetSoundSetting(soundItem);
+            Global.UtilAudio.SetSoundSetting(soundItem);
         }
     }
 }

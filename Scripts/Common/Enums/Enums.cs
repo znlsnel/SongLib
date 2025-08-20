@@ -8,4 +8,9 @@ namespace SongLib
         Menu
     }
 
+
+    public enum EGlobalType
+    {
+        TransitionDim,
+    }
 }
