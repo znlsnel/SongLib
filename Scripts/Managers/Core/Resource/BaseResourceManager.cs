@@ -6,6 +6,16 @@ namespace SongLib
 {
     public abstract class BaseResourceManager<U> : SingletonWithMono<U>, IResourceManager, IBaseManager where U : BaseResourceManager<U>, new()
     {
+        public T Load<T>(string path) where T : UnityEngine.Object
+        {
+            T obj = Resources.Load<T>(path);
+            if (obj == null)
+            {
+                DebugHelper.LogWarning(EDebugType.Info, $"[Resource - {typeof(T)}] Load Fail : {path}");
+            }
+            return obj;
+        }
+
         // Prefab ============================
         protected GameResource<GameObject> resourcePrefab;
         

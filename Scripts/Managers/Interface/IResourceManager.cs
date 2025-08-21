@@ -5,6 +5,9 @@ namespace SongLib
 {
     public interface IResourceManager
     {
+        // Generic ============================
+        T Load<T>(string path) where T : UnityEngine.Object;
+
         // Prefab ============================
         GameObject GetPrefab(string fileName);
         void DelPrefab(string fileName);
