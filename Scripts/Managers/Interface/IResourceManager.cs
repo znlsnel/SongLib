@@ -5,9 +5,6 @@ namespace SongLib
 {
     public interface IResourceManager
     {
-        // Generic ============================
-        T Load<T>(string path) where T : UnityEngine.Object;
-
         // Prefab ============================
         GameObject GetPrefab(string fileName);
         void DelPrefab(string fileName);
@@ -43,5 +40,9 @@ namespace SongLib
         // TMP_FontAsset ============================
         TMP_FontAsset GetFontAsset(string fileName);
         void DelFontAsset(string fileName);
+
+        // Scriptable Objects ============================
+        ScriptableObject GetSOData(string fileName);
+        void DelSOData(string fileName);
     }
 }
