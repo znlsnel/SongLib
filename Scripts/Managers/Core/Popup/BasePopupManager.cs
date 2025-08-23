@@ -46,6 +46,7 @@ namespace SongLib
         #region << =========== OPEN POPUP =========== >>
 
         public UIPopup OpenPopup(int popupID) => _popupSystem.OpenPopup(popupID);
+        public UIPopup OpenPopup(Enum type) => _popupSystem.OpenPopup(Convert.ToInt32(type));
         public T OpenPopup<T>(int popupID) where T : UIPopup => _popupSystem.OpenPopup(popupID) as T;
 
         #endregion

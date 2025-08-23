@@ -13,6 +13,7 @@ namespace SongLib
         bool OnUpdateAndroidKey(EAndroidKeyStateType keyState);
 
         UIPopup OpenPopup(int popupID);
+        UIPopup OpenPopup(Enum type);
         T OpenPopup<T>(int popupID) where T : UIPopup;
         void ClosePopup(UIPopup uiPopup);
         void ClosePopup(int popupID);
