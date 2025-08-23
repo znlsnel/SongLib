@@ -42,7 +42,7 @@ namespace SongLib
         void DelFontAsset(string fileName);
 
         // Scriptable Objects ============================
-        T GetSOData<T>(string fileName) where T : ScriptableObject;
-        void DelSOData(string fileName);
+        T GetSO<T>(string fileName) where T : ScriptableObject;
+        void DelSO(string fileName);
     }
 }

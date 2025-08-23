@@ -150,8 +150,8 @@ namespace SongLib
 
         #region << =========== Scriptable Objects =========== >>
 
-        public T GetSOData<T>(string fileName) where T : ScriptableObject => resourceSO.GetResource(fileName) as T;
-        public void DelSOData(string fileName) => resourceSO.DelResource(fileName);
+        public T GetSO<T>(string fileName) where T : ScriptableObject => resourceSO.GetResource(fileName) as T;
+        public void DelSO(string fileName) => resourceSO.DelResource(fileName);
 
         #endregion
     }
