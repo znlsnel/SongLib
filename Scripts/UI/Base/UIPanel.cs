@@ -5,14 +5,19 @@ using UnityEngine;
 
 namespace SongLib
 {
+    [RequireComponent(typeof(UIContainer))]
     public abstract class UIPanel : UIBase
     {
-        [BoxGroup("UI Panel")][SerializeField] [PropertyOrder(-1)] private List<UIPanel> _childUIPanelList = new();
+        [BoxGroup("UI Panel")][SerializeField] private UIContainer _uiContainer;
+        [BoxGroup("UI Panel")][SerializeField][PropertyOrder(-1)] private List<UIPanel> _childUIPanelList = new();
 
         public override void Init()
         {
             base.Init();
-            
+
+            _uiContainer = this.GetOrAddComponent<UIContainer>();
+            _uiContainer.Init();
+
             if (_childUIPanelList == null)
                 return;
 
@@ -25,7 +30,7 @@ namespace SongLib
         public override void Refresh()
         {
             base.Refresh();
-            
+
             if (_childUIPanelList == null)
                 return;
 
@@ -34,11 +39,11 @@ namespace SongLib
                 _childUIPanelList[i]?.Refresh();
             }
         }
-        
+
         public override void SetInfo(IInfo infoData)
         {
             base.SetInfo(infoData);
-            
+
             if (_childUIPanelList == null)
                 return;
 
@@ -47,12 +52,12 @@ namespace SongLib
                 _childUIPanelList[i]?.SetInfo(infoData);
             }
         }
-        
+
         protected abstract override void OnInit();
         protected abstract override void OnRefresh();
 
         #region << =========== DEBUG =========== >>
-        
+
         public new string GetDebugInfo()
         {
             string info = $"UIPanel Info:\n" +

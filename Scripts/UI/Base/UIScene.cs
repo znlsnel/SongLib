@@ -4,20 +4,20 @@ namespace SongLib
 {
     public abstract class UIScene: UIPanel
     {
-        [SerializeField] private UIContainer _uiContainer;
+
 
         public override void Init()
         {
             base.Init();
             
-            if (_uiContainer == null)
-            {
-                InitChildUIBase();
-            }
-            else
-            {
-                _uiContainer.Init();
-            }
+            // if (_uiContainer == null)
+            // {
+            //     InitChildUIBase();
+            // }
+            // else
+            // {
+            //     _uiContainer.Init();
+            // }
         }
 
         public override void Refresh()
