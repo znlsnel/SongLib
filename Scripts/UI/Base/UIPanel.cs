@@ -25,6 +25,8 @@ namespace SongLib
             {
                 _childUIPanelList[i]?.Init();
             }
+
+            
         }
 
         public override void Refresh()

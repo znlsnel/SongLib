@@ -9,7 +9,7 @@ namespace SongLib
         public override void Init()
         {
             base.Init();
-            
+
             // if (_uiContainer == null)
             // {
             //     InitChildUIBase();
@@ -18,6 +18,8 @@ namespace SongLib
             // {
             //     _uiContainer.Init();
             // }
+            SetCanvasGroupAll(true);
+            
         }
 
         public override void Refresh()
