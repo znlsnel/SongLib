@@ -11,6 +11,12 @@ namespace SongLib
         [BoxGroup("UI Panel")][SerializeField] private UIContainer _uiContainer;
         [BoxGroup("UI Panel")][SerializeField][PropertyOrder(-1)] private List<UIPanel> _childUIPanelList = new();
 
+        private void OnValidate()
+        {
+            if (_uiContainer == null)
+                _uiContainer = this.GetOrAddComponent<UIContainer>(); 
+        }
+
         public override void Init()
         {
             base.Init();
@@ -26,7 +32,7 @@ namespace SongLib
                 _childUIPanelList[i]?.Init();
             }
 
-            
+
         }
 
         public override void Refresh()
