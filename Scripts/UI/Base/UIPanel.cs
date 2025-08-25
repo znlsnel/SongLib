@@ -8,7 +8,7 @@ namespace SongLib
     [RequireComponent(typeof(UIContainer))]
     public abstract class UIPanel : UIBase
     {
-        [BoxGroup("UI Panel")][SerializeField] private UIContainer _uiContainer;
+        [BoxGroup("UI Panel")][SerializeField] protected UIContainer _uiContainer;
         [BoxGroup("UI Panel")][SerializeField][PropertyOrder(-1)] private List<UIPanel> _childUIPanelList = new();
 
         private void OnValidate()

@@ -14,9 +14,6 @@ namespace SongLib
     public abstract class UIPopup : UIPanel
     {
         #region << ========== FIELDS ========== >>
-
-        [BoxGroup("UI CONTAINER")] [SerializeField] private UIContainer _uiContainer;
-
         [BoxGroup("Components")] [SerializeField] private Camera _popupCamera; 
         [BoxGroup("Components")] [SerializeField] protected Transform contentTF;
         [BoxGroup("Components")] [SerializeField] private GameObject _blockObj;
@@ -115,7 +112,7 @@ namespace SongLib
 
             SceneManager.sceneLoaded += OnSceneLoaded;
 
-            _exitBtn.onClick.AddListener(Close);
+            _exitBtn?.onClick.AddListener(Close);
 
             OnInitPopup();
         }
